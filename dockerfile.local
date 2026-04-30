@@ -1,0 +1,19 @@
+FROM node:22-alpine
+
+WORKDIR /app
+
+ENV NODE_ENV=development
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+
+# CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "dev", "--", "--webpack"]
+
+
+# docker build -t ssr_ssg_local -f dockerfile.local .
+# docker run -it --rm --name ssr_ssg_local_container -p 8000:3000 -e WATCHPACK_POLLING=true -v "${PWD}:/app" -v /app/node_modules -v /app/.next ssr_ssg_local
