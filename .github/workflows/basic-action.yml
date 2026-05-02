@@ -1,0 +1,16 @@
+name: Basic Setup Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-basic-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+
+      - name: Print a greeting
+        run: echo "Hello! The basic action was triggered successfully."
