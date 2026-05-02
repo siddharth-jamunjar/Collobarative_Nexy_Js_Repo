@@ -1,7 +1,7 @@
 function Postpage() {
   return (
     <div className="w-full h-screen flex justify-center items-center">
-      This is main lol
+      This is main page of posts
     </div>
   );
 }
